@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<h2>Success</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+
+    <form method="get" action="@Url.Action("DisplayData", "Home")">
+        <button type="submit">Show Data</button>
+    </form>
+}
+else
+{
+    <div class="alert alert-info">
+        No message available.
+    </div>
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Success</title>
+</head>
+<body>
+    <div>
+        @*<div><h1>Sucessfully data submited!</h1></div>*@
+
+    </div>
+</body>
+</html>

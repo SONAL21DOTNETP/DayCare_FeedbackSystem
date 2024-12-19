@@ -1,0 +1,289 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model ParentPreferenceFeedback.Models.DaycareFormModel
+
+@using ParentPreferenceFeedback.Models
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Daycare Form</title>
+
+    <link href="~/content/css/StyleSheet.css" rel="stylesheet" />
+
+
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+    <div style="text-align: center; margin-top:20px;">
+        <img src="~/content/IMI LOGO.png" alt="Daycare Centre Logo" style="width: 50px; height: 50px; display: inline-block; vertical-align: middle;" class="mb-3">
+        <h1 style="display: inline-block; vertical-align: middle; margin: 0;" class="mb-4 color:blue;">Daycare Centre Parent Preferences</h1>
+    </div>
+
+        @using (Html.BeginForm())
+        {
+            <div class="container">
+
+                <h6 style="text-align: center; color: #007bff;" >
+                    We value your input ensuring your child's experience at our daycare center is positive, safe, and enriching. Please take a few moments to fill out this form so we can better tailor our care and activities to your child's needs
+
+                </h6>
+                <br />
+
+                <h6 style="text-align: center; color: #007bff;" >
+                    We are committed to providing the best care for your child. To help us meet your family's specific needs, please take a few moments to complete this questionnaire. Your answers will assist us in creating a nurturing, safe, and enriching environment for your child.
+                </h6>
+
+                <h3 class="text-center mt-4">Parent/Guardian Information</h3>
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.ParentName, "1. Parent/Guardian Name :", new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.ParentName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ParentName, "", new { @class = "text-danger" })
+                    </div>
+
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.ContactNumber, "2. Contact Number :", new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.ContactNumber, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ContactNumber, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.Email, "3. Email Adress :", new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.ChildName, "4. Child's Name :", new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.ChildName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ChildName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.ChildAge, "5. Child's Age :", new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.ChildAge, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ChildAge, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.PrimaryLanguage, "6. Primary Language(s) Spoken at Home :", new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.PrimaryLanguage, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.PrimaryLanguage, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <h3 class="text-center mt-4">Child's Needs & Preferences</h3>
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.Requirements, "7. What are your child's specific needs or requirements? (eg.,medical ,developmental,behavioral,or dietary needs)", new { @class = "form-label" })
+                        @Html.TextAreaFor(m => m.Requirements, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Requirements, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.Allergies, "8. Does your child have any allergies or medical conditions? if yes ,please describe:", new { @class = "form-label" })
+                        @Html.TextAreaFor(m => m.Allergies, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Allergies, "", new { @class = "text-danger" })
+                    </div>
+
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.ComfortItems, "9.Does your child have any specific comfort items(e.g,blanket,toy) they need to feel secure? :", new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.ComfortItems, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ComfortItems, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.SleepingHabits, "10.What are your child's sleeping habits or nap preferences? (e.g, time of day, duration)", new { @class = "form-label" })
+                        @Html.TextAreaFor(m => m.SleepingHabits, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.SleepingHabits, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.Meals, "11.What is your child,s typical eating routine(e.g.,preferred meals,snack time,dietary restrictions)? ", new { @class = "form-label" })
+                        @Html.TextAreaFor(m => m.Meals, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Meals, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <h3 class="text-center mt-4">Parenting Preferences & Expectations</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.BehavioralChallenges, "12. Does your child have any specific behavioral challenges or things that trigger discomfort (e.g., separation anxiety, fear of loud noises)? :", new { @class = "form-label" })
+                        @Html.TextAreaFor(m => m.BehavioralChallenges, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.BehavioralChallenges, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.Expectations, "13.What are your expectations for the daycare's approach to discipline and behavior management? :")
+                        @Html.TextAreaFor(m => m.Expectations, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Expectations, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.TeachingApproach, "14. Are there any specific teaching or learning approaches that you prefer for your child (e.g., play-based learning, Montessori, structured routines)? :", new { @class = "form-label" })
+                        @Html.TextAreaFor(m => m.TeachingApproach, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.TeachingApproach, "", new { @class = "text-danger" })
+                    </div>
+
+
+
+                    <!-- Focus Areas -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">15. How important is it to you that the daycare has a focus on (Check all that apply):</label>
+                        @Html.ValidationMessageFor(m => m.DaycareFormFocusAreas, "", new { @class = "text-danger" })
+                        <ul>
+                            @foreach (var focusArea in Enum.GetValues(typeof(ParentPreferenceFeedback.Models.FocusArea)).Cast<ParentPreferenceFeedback.Models.FocusArea>())
+                            {
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="selectedFocusAreas" value="@focusArea"
+                                               @(Model.DaycareFormFocusAreas != null && Model.DaycareFormFocusAreas.Any(f => f.FocusArea == focusArea) ? "checked" : "") />
+                                        @focusArea
+                                    </label>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+                    <!-- Communication Preferences -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">16. What type of communication would you prefer with the daycare center? (Check all that apply):</label>
+                        @Html.ValidationMessageFor(m => m.DaycareFormCommunicationPreferences, "", new { @class = "text-danger" })
+                        <ul>
+                            @foreach (var preference in Enum.GetValues(typeof(ParentPreferenceFeedback.Models.CommunicationPreference)).Cast<ParentPreferenceFeedback.Models.CommunicationPreference>())
+                            {
+                                <li>
+                                    <label>
+
+                                        <input type="checkbox" name="selectedCommunicationPreferences" value="@preference"
+                                               @(Model.DaycareFormCommunicationPreferences != null && Model.DaycareFormCommunicationPreferences.Any(c => c.CommunicationPreference == preference) ? "checked" : "") />
+                                        @preference
+                                    </label>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+                <h6 class="mt-4">17. What is your preferred drop-off and pick-up time for your child?</h6>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.Dropoff, "Drop-off :")
+                        @Html.TextBoxFor(m => m.Dropoff, new { @class = "form-control", placeholder = "HH:mm" })
+                        @Html.ValidationMessageFor(m => m.Dropoff, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.Pickoff, "Pick-off :")
+                        @Html.TextBoxFor(m => m.Pickoff, new { @class = "form-control", placeholder = "HH:mm" })
+                        @Html.ValidationMessageFor(m => m.Pickoff, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+
+                <h3 class="text-center mt-4">Safety and Environment</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+
+
+                        @Html.LabelFor(m => m.PrimaryConcerns, "18.What are your primary concerns regarding your child,s safety at daycare?")
+                        @Html.TextAreaFor(m => m.PrimaryConcerns, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.PrimaryConcerns, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.BehaviorTemperament, "19.Is there anything about your child,s behavior or temperament that the cargivers should be particularly aware of to ensure safety(e.g.,tendencies to run, climb,put things in their mouth )?")
+                        @Html.TextAreaFor(m => m.BehaviorTemperament, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.BehaviorTemperament, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.SpecialRequests, "20.Do you have any concerns or special requests related to the daycare environment(e.g.,quiet spaces,access to outdoor play,specific toys,or equipment)?")
+                        @Html.TextAreaFor(m => m.SpecialRequests, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.SpecialRequests, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.NotificationPreference, "21.How do you prefer to be notified in case of an emergency (e.g.,phone call,text,email)?")
+                        @Html.TextAreaFor(m => m.NotificationPreference, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.NotificationPreference, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+                <h3 class="text-center mt-4">Additional Information</h3>
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.CulturalPractices, "22.Are there any family traditions, cultural practices,or values that you would like us to respect or incorporate into your child's experience at daycare?")
+                        @Html.TextAreaFor(m => m.CulturalPractices, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CulturalPractices, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.LongTermGoals, "23.What are your long-term goals or expectations for your child's development in daycare?")
+                        @Html.TextAreaFor(m => m.LongTermGoals, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.LongTermGoals, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.AdditionalInfo, "24.Is there anything else you would like us to know about your child or family to help us provide the best care possible ?")
+                        @Html.TextAreaFor(m => m.AdditionalInfo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.AdditionalInfo, "", new { @class = "text-danger" })
+                    </div>
+
+
+                </div>
+
+                <h6 style="text-align: center; color: #007bff;">
+                    Thank you for taking the time to fill out this questionnaire. We look forward to partnering with you to provide your child with a safe, caring, and enriching daycare experience!
+
+                </h6>
+                <br />
+                <h6 style="text-align: center; color: #007bff;">
+                    This questionnaire aims to provide a thorough understanding of the parent's needs, preferences, and any special considerations for their child's care. It's designed to help daycare centers tailor their services to meet the unique requirements of each family
+                </h6>
+
+                <button type="submit" class="btn btn-primary text-center d-flex justify-content-center mx-auto">
+                    Submit
+                </button>
+
+
+
+
+            </div>
+
+            <!-- Bootstrap 4 JS and dependencies -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+        }
+</body>
+
+</html>
+

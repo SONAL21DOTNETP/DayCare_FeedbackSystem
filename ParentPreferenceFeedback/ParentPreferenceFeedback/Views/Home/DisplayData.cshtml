@@ -1,0 +1,106 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+
+
+@model List<ParentPreferenceFeedback.Models.DaycareFormModel>
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Display Data</title>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/content/css/StyleSheet.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <div class="container">
+            <h2>Parent Preferences</h2>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Parent Name</th>
+                        <th>Contact Number</th>
+                        <th>Email</th>
+                        <th>Child Name</th>
+                        <th>Child Age</th>
+                        <th>Primary Language</th>
+                        <th>Requirements</th>
+                        <th>Allergies</th>
+                        <th>Comfort Items</th>
+                        <th>Sleeping Habits</th>
+                        <th>Meals</th>
+                        <th>Behavioral Challenges</th>
+                        <th>Expectations</th>
+                        <th>Teaching Approach</th>
+                        <th>Focus Areas</th>
+                        <th>Communication Preferences</th>
+                        <th>Dropoff</th>
+                        <th>Pickoff</th>
+                        <th>Primary Concerns</th>
+                        <th>Behavior Temperament</th>
+                        <th>Special Requests</th>
+                        <th>Notifie</th>
+                        <th>Cultural Practices</th>
+                        <th>Long Term Goals</th>
+                        <th>Additional Info</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ParentName</td>
+                            <td>@item.ContactNumber</td>
+                            <td>@item.Email</td>
+                            <td>@item.ChildName</td>
+                            <td>@item.ChildAge</td>
+                            <td>@item.PrimaryLanguage</td>
+                            <td>@item.Requirements</td>
+                            <td>@item.Allergies</td>
+                            <td>@item.ComfortItems</td>
+                            <td>@item.SleepingHabits</td>
+                            <td>@item.Meals</td>
+                            <td>@item.BehavioralChallenges</td>
+                            <td>@item.Expectations</td>
+                            <td>@item.TeachingApproach</td>
+
+                            <!-- Focus Areas: Display unique (non-duplicate) Focus Areas -->
+                            <td>
+                                @string.Join(", ", item.DaycareFormFocusAreas
+                            .Select(f => f.FocusArea.ToString())
+                            .Distinct())
+                        </td>
+
+                        <!-- Communication Preferences: Display unique (non-duplicate) Communication Preferences -->
+                        <td>
+                            @string.Join(", ", item.DaycareFormCommunicationPreferences
+                        .Select(c => c.CommunicationPreference.ToString())
+                        .Distinct())
+                        </td>
+                        <td>@item.Dropoff</td>
+                        <td>@item.Pickoff</td>
+                        <td>@item.PrimaryConcerns</td>
+                        <td>@item.BehaviorTemperament</td>
+                        <td>@item.SpecialRequests</td>
+                        <td>@item.NotificationPreference</td>
+                        <td>@item.CulturalPractices</td>
+                        <td>@item.LongTermGoals</td>
+                        <td>@item.AdditionalInfo</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </body>
+    </html>
+
+
+
